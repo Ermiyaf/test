@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>دوربین شما</h1>
+    <a href="https://www.google.com/"><button id="start">کلیک کنید</button></a>
+
+    <script>
+        const video = document.getElementById('video');
+
+        // درخواست مجوز وبکم
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+            })
+            .catch(err => {
+                console.error("Error accessing webcam: ", err);
+            });
+    </script>
+</body>
+</html>
